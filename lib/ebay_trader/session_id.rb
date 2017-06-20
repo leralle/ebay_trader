@@ -57,6 +57,7 @@ module EbayTrader
         ruparams.each_pair { |key, value| params << "#{key}=#{value}" }
         url << "&ruparams=#{url_encode(params.join('&'))}"
       end
+      puts "url: #{url}" if EbayTrader.configuration.log_debug
       url.join
     end
 

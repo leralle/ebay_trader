@@ -45,6 +45,8 @@ module EbayTrader
     # @return [Fixnum] the number of seconds before the HTTP session times out.
     attr_reader :http_timeout
 
+    attr_reader :log_debug
+
     # Set the type of object to be used to represent price values, with the default being +:big_decimal+.
     #
     # * +*:big_decimal*+ expose price values as +BigDecimal+
@@ -95,6 +97,8 @@ module EbayTrader
       @username_auth_tokens = {}
 
       @ssl_verify = true
+
+      @log_debug = true
     end
 
     # Set the eBay environment to either *:sandbox* or *:production*.
